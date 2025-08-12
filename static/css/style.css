@@ -1,0 +1,407 @@
+/* Custom styles for Smart Greenhouse */
+body {
+    background-color: #f8f9fa;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    transition: background-color 0.3s ease;
+}
+
+body.night-mode {
+    background-color: #121212;
+    color: #e0e0e0;
+}
+
+.navbar {
+    box-shadow: 0 2px 4px rgba(0,0,0,.1);
+}
+
+.navbar.night-mode {
+    background-color: #1e1e1e;
+    border-bottom: 1px solid #444;
+}
+
+.container-fluid {
+    padding-top: 70px;
+}
+
+.sensor-card {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border-radius: 10px;
+    padding: 15px;
+    margin-bottom: 10px;
+    box-shadow: 0 4px 6px rgba(0,0,0,.1);
+    display: flex;
+    align-items: center;
+}
+
+.sensor-card.night-mode {
+    background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+    box-shadow: 0 4px 6px rgba(0,0,0,.3);
+}
+
+.card {
+    border-radius: 10px;
+}
+
+.card.night-mode {
+    background-color: #1e1e1e;
+    color: #e0e0e0;
+    border: 1px solid #444;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+.card-header.night-mode {
+    background-color: #2d2d2d;
+    color: #e0e0e0;
+}
+
+.sensor-icon {
+    font-size: 1.8rem;
+    margin-right: 15px;
+    width: 40px;
+    text-align: center;
+}
+
+.sensor-details {
+    flex-grow: 1;
+}
+
+.sensor-name {
+    font-size: 0.9rem;
+    opacity: 0.9;
+}
+
+.sensor-value {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+/* Actuator Controls Section */
+.actuator-controls {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+    padding: 0;
+}
+
+.actuator-card {
+    background-color: #f8f9fa; /* Retain original color */
+    border: 1px solid #dee2e6;
+    border-radius: 10px; /* Match sensor card border radius */
+    padding: 15px;
+    margin-bottom: 10px;
+    box-shadow: 0 4px 6px rgba(0,0,0,.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Center content vertically */
+    align-items: center; /* Center content horizontally */
+    text-align: center; /* Ensure text alignment */
+    height: 80px; /* Match sensor card height */
+    cursor: pointer; /* Ensure clickability */
+    transition: all 0.3s ease;
+}
+
+.actuator-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px rgba(0,0,0,.15); /* Enhance hover effect */
+}
+
+.actuator-card.on {
+    background-color: #28a745; /* Green for active state */
+    color: white;
+    border-color: #28a745;
+}
+
+.actuator-card.on .actuator-icon {
+    color: white;
+}
+
+.actuator-card.off {
+    background-color: #6c757d; /* Grey for inactive state */
+    color: white;
+    border-color: #6c757d;
+}
+
+.actuator-card.off .actuator-icon {
+    color: #f8f9fa;
+}
+
+.actuator-icon {
+    font-size: 1.8rem;
+    margin-right: 15px;
+    width: 40px;
+    text-align: center;
+}
+
+.actuator-name {
+    font-size: 0.9rem;
+    opacity: 0.9;
+    margin-bottom: 0;
+}
+
+.actuator-status {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-left: auto;
+}
+
+/* Button styles */
+.btn {
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 1rem;
+    font-weight: 500;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.btn.night-mode {
+    background-color: #2d2d2d;
+    color: #e0e0e0;
+    border-color: #444;
+}
+
+.btn.night-mode:hover {
+    background-color: #444;
+    color: #fff;
+}
+
+/* Progress bar styles */
+.progress {
+    border-radius: 5px;
+    overflow: hidden;
+    height: 20px;
+    background-color: #e9ecef;
+}
+
+.progress-bar {
+    transition: width 0.3s ease;
+}
+
+.progress-bar.night-mode {
+    background-color: #4caf50;
+}
+
+/* Zone view styles */
+.zone-view {
+    border-radius: 10px;
+    padding: 15px;
+    margin-bottom: 10px;
+    position: relative;
+    overflow: hidden;
+}
+
+.zone-view.night-mode {
+    background-color: #1e1e1e;
+    border-color: #4caf50;
+}
+
+.zone-label {
+    font-size: 1.2rem;
+    font-weight: 500;
+    margin-bottom: 5px;
+}
+
+.zone-label.night-mode {
+    color: #4caf50;
+}
+
+/* Voice feedback styling */
+#voiceFeedback {
+    background-color: #e9ecef;
+    color: #212529;
+    border: 1px solid #dee2e6;
+}
+
+#voiceFeedback.night-mode {
+    background-color: #2d2d2d;
+    color: #e0e0e0;
+    border: 1px solid #444;
+}
+
+#voiceCommandText, #voiceResponseText {
+    color: #212529;
+}
+
+#voiceFeedback.night-mode #voiceCommandText,
+#voiceFeedback.night-mode #voiceResponseText {
+    color: #e0e0e0;
+}
+
+/* Zone effect styling */
+.zone-effect {
+    position: absolute;
+    font-size: 2rem;
+    z-index: 20;
+    animation: zoneEffect 2s ease-out forwards;
+}
+
+@keyframes zoneEffect {
+    0% {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1);
+    }
+    100% {
+        opacity: 0;
+        transform: translate(-50%, -50%) scale(2);
+    }
+}
+
+.zone-water {
+    color: #17a2b8;
+}
+
+.zone-water.night-mode {
+    color: #339af0;
+}
+
+.zone-manure {
+    color: #ffc107;
+}
+
+.zone-manure.night-mode {
+    color: #f59f00;
+}
+
+.zone-fertilizer {
+    color: #28a745;
+}
+
+.zone-fertilizer.night-mode {
+    color: #40c057;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .container-fluid {
+        padding-top: 60px;
+    }
+    
+    .sensor-card {
+        margin-bottom: 5px;
+        padding: 10px;
+    }
+    
+    .sensor-name {
+        font-size: 0.8rem;
+    }
+    
+    .sensor-value {
+        font-size: 1.2rem;
+    }
+    
+    .actuator-controls {
+        gap: 10px;
+    }
+    
+    .actuator-card {
+        padding: 10px;
+        height: 70px;
+    }
+    
+    .actuator-icon {
+        font-size: 1.5rem;
+        margin-right: 10px;
+    }
+    
+    .actuator-name {
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .actuator-controls {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+}
+
+/* Dark mode specific styles */
+.night-mode .btn {
+    --bs-btn-color: #e0e0e0;
+}
+
+.night-mode .btn-outline-light {
+    --bs-btn-color: #f8f9fa;
+    --bs-btn-border-color: #f8f9fa;
+    --bs-btn-hover-color: #121212;
+    --bs-btn-hover-bg: #f8f9fa;
+    --bs-btn-hover-border-color: #f8f9fa;
+}
+
+.night-mode .progress {
+    background-color: #2d2d2d;
+}
+
+.night-mode .progress-bar {
+    background-color: #4caf50;
+}
+
+.night-mode .text-muted {
+    color: #a0a0a0 !important;
+}
+
+/* Night Mode Enhancements */
+body.night-mode {
+    background-color: #121212;
+    color: #e0e0e0;
+}
+
+.navbar.night-mode {
+    background-color: #1e1e1e;
+    border-bottom: 1px solid #444;
+}
+
+.card.night-mode {
+    background-color: #1e1e1e;
+    color: #e0e0e0;
+    border: 1px solid #444;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+.card-header.night-mode {
+    background-color: #2d2d2d;
+    color: #e0e0e0;
+}
+
+.btn.night-mode {
+    background-color: #2d2d2d;
+    color: #e0e0e0;
+    border-color: #444;
+}
+
+.btn.night-mode:hover {
+    background-color: #444;
+    color: #fff;
+}
+
+.progress-bar.night-mode {
+    background-color: #4caf50;
+}
+
+.zone-view.night-mode {
+    background-color: #1e1e1e;
+    border-color: #4caf50;
+}
+
+.zone-label.night-mode {
+    color: #4caf50;
+}
+
+#voiceFeedback.night-mode {
+    background-color: #2d2d2d;
+    color: #e0e0e0;
+    border: 1px solid #444;
+}
+
+#dayNightToggle.night-mode {
+    background-color: #444;
+    color: #fff;
+}
+
+#robot-indicator i {
+    color: #212121; /* Dark color for animation */
+}
+
+.night-mode .robot-icon i {
+    color: #ffffff; /* White color for dashboard in night mode */
+}
